@@ -19,24 +19,25 @@ The `gh-collaborators` extension supports `GitHub.com` and GitHub Enterprise Ser
 
 ```sh
 $ gh collaborators -h
-List guest collaborators and their repos.
+List and maintain repository collaborators and their assigned repositories.
 
 Usage:
   collaborators [command]
 
 Available Commands:
-  list        Generate a report of repos guest collaborators have access to.
+  add         Add repo access for repository collaborators.
+  list        Generate a report of repos that repository collaborators have access to.
+  remove      Remove repo access for repository collaborators.
 
 Flags:
   -h, --help   help for collaborators
 
-Use "collaborators [command] --help" for more information about a command. 
+Use "collaborators [command] --help" for more information about a command.
 ```
 
 ### List Collaborators
 
 Repository permissions assigned to a Repository Collaborator can be listed and written to a `csv` file for an organization or specific user.
-
 
 ```sh
 $ gh collaborators list -h
@@ -63,3 +64,57 @@ The output `csv` file contains the following information:
 |`Visibility`| The visibility of the repository. |
 |`Username`| The username of the repository collaborator. |
 |`AccessLevel`| The repository access permissions granted to the repository collaborator. |
+
+### Add Collaborators
+
+Repository permissions can be assigned to a Repository Collaborator defined in a **required** `csv` file for an organization.
+
+```sh
+$ gh collaborators add -h 
+Add repositories and permissions for repository collaborators.
+
+Usage:
+  collaborators add [flags] <organization>
+
+Flags:
+  -d, --debug              To debug logging
+  -f, --from-file string   Path and Name of CSV file to create access from (required)
+  -h, --help               help for add
+      --hostname string    GitHub Enterprise Server hostname (default "github.com")
+  -t, --token string       GitHub Personal Access Token (default "gh auth token")
+```
+
+The required  `csv` file contains the following information:
+
+| Field Name | Description |
+|:-----------|:------------|
+|`RepositoryName` | The name of the repository that the user will be given access to. |
+|`Username`| The username of the repository collaborator. |
+|`AccessLevel`| The repository access permissions to grant the repository collaborator. |
+
+### Remove Collaborators
+
+Repository permissions can be removed for a Repository Collaborator defined in a **required** `csv` file for an organization.
+
+```sh
+$ gh collaborators remove -h                                         
+Remove repositories and permissions for repository collaborators.
+
+Usage:
+  collaborators remove [flags] <organization>
+
+Flags:
+  -d, --debug              To debug logging
+  -f, --from-file string   Path and Name of CSV file to remove access from (required)
+  -h, --help               help for remove
+      --hostname string    GitHub Enterprise Server hostname (default "github.com")
+  -t, --token string       GitHub Personal Access Token (default "gh auth token")
+
+```
+
+The output `csv` file contains the following information:
+
+| Field Name | Description |
+|:-----------|:------------|
+|`RepositoryName` | The name of the repository that the user will be given access to. |
+|`Username`| The username of the repository collaborator. ||

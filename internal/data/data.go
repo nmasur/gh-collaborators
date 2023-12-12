@@ -37,3 +37,13 @@ type RepoCollaborators struct {
 	Id    int    `json:"id"`
 	Type  string `json:"type"`
 }
+
+type ImportedRepoCollab struct {
+	RepositoryName string `json:"repositoryname"`
+	Username       string `json:"username"`
+	Permission     string `json:"accesslevel"`
+}
+
+type Permission struct {
+	Permission string `json:"permission"`
+}

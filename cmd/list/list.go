@@ -34,8 +34,8 @@ func NewCmdList() *cobra.Command {
 
 	listCmd := &cobra.Command{
 		Use:   "list [flags] <organization>",
-		Short: "Generate a report of repos guest collaborators have access to.",
-		Long:  "Generate a report of repositories guest collaborators have access to.",
+		Short: "Generate a report of repos that repository collaborators have access to.",
+		Long:  "Generate a report of repos that repository collaborators have access to.",
 		Args:  cobra.MinimumNArgs(1),
 		RunE: func(listCmd *cobra.Command, args []string) error {
 			var err error
