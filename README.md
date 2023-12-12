@@ -116,5 +116,5 @@ The output `csv` file contains the following information:
 
 | Field Name | Description |
 |:-----------|:------------|
-|`RepositoryName` | The name of the repository that the user will be given access to. |
-|`Username`| The username of the repository collaborator. ||
+|`RepositoryName` | The name of the repository that the user will be removed from. |
+|`Username`| The username of the repository collaborator. |
