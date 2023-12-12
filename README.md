@@ -1,4 +1,4 @@
-# gh-environments
+# gh-collaborators
 
 A GitHub `gh` [CLI](https://cli.github.com/) extension to list and manage repository (outside) collaborators in a given organization. 
 
