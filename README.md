@@ -84,7 +84,7 @@ Flags:
   -t, --token string       GitHub Personal Access Token (default "gh auth token")
 ```
 
-The required  `csv` file contains the following information:
+The required  `csv` file should contain the following information:
 
 | Field Name | Description |
 |:-----------|:------------|
@@ -112,7 +112,7 @@ Flags:
 
 ```
 
-The output `csv` file contains the following information:
+The required  `csv` file should contain the following information:
 
 | Field Name | Description |
 |:-----------|:------------|
